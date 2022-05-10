@@ -66,8 +66,8 @@ li{
     width: 30%;
     height: 100%;
     justify-content: flex-start;
-    /* TEST */
     background-color: white;
+    overflow-y: auto;
 }
 
 /* left side header */
@@ -95,7 +95,6 @@ header.left-side img{
 .header-icons i{
     padding: .5rem;
 }
-
 
 /* lefts side notification section  */
 .left-notificatio-section{
@@ -130,10 +129,6 @@ header.left-side img{
     padding: .5rem;    
 }
 
-.left-user-list{
-    overflow: auto;
-}
-
 /* COMMON SEARCHBAR */
 
 .searchContainer {
@@ -165,6 +160,7 @@ header.left-side img{
     align-items: center;
 }
 
+
 .contact-card{
     display: flex;
 }
@@ -186,10 +182,9 @@ header.left-side img{
 }
 
 .contact-metadata{
-   
+   color: var(--grey-text);
+   font-size: var(--grey-text-size);
 }
-
-
 
 /* RIGHT SIDE OF INTERFACE */
 
@@ -198,8 +193,6 @@ header.left-side img{
     justify-content: flex-end;
     width: 70%;
     height: 100%;
-    /* TEST */
-    background-color: cornsilk;
 }
 
 /* right side header */
