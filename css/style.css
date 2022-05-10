@@ -14,6 +14,22 @@ html{
     
 }
 
+/* ROOT */
+:root{
+    --grey-text: #d0c6c6;
+    --bell-background: white;
+    --grey-text-size: .8rem;
+    --background-grey: #eaeaea;
+    --icon-color: #b1b1b1;
+    --background-notification-section: #8edafc;
+}
+
+/* COMMON */
+
+i{
+    color: var(--icon-color);
+}
+
 /* MAIN */
 
 .main-container{
@@ -54,23 +70,19 @@ header.left-side{
     display: flex;
     width: 100%;
     height: 80px;
-    /* TEST */
-    background-color: blue;
+    background-color: var(--background-grey);
 }
 
 header.left-side img{
-    width: 20%;
+    width: 3.5rem;
     border-radius: 50%;
     margin: .7rem;
 }
 
+/* user */
 .user-info{
     display: flex;
     align-items: center;
-}
-
-.header-icons {
-    display: flex;
 }
 
 .header-icons i{
@@ -82,17 +94,61 @@ header.left-side img{
 .left-notificatio-section{
     height: 90px;
     width: 100%;
+    display: flex;
+    align-items: center;
     /* TEST */
-    background-color: aquamarine;
+    background-color: var(--background-notification-section);
+}
+
+.left-notificatio-section i{
+    font-size: 1rem;
+    background-color: var(--bell-background) ;
+    color: var(--background-notification-section);
+    padding: 1rem;
+    line-height: 1rem;
+    text-align: center;
+    border-radius: 50%;
+    margin: .5rem;
+}
+
+.set-active-notification a{
+    color: var(--grey-text);
+    font-size: var(--grey-text-size);
 }
 
 /* left search bar */
 .left-search-bar{
     width: 100%;
-    height: 60px;
-    /* TEST */
-    background-color: blueviolet;
+    background-color: var(--background-grey);
+    padding: .5rem;    
 }
+
+.left-user-list{
+    overflow: auto;
+}
+
+/* COMMON SEARCHBAR */
+
+.searchContainer {
+    display: flex;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .searchIcon {
+    padding: 0.2rem;
+    padding-left: 1rem;
+    background-color: white;
+  }
+  
+  .searchBox {
+    border: 0;
+    padding: 0.2rem;
+    padding-left: 1rem;
+    flex-grow: 1;
+  }
 
 /* RIGHT SIDE OF INTERFACE */
 
@@ -107,25 +163,65 @@ header.left-side img{
 
 /* right side header */
 header.right-side{
-
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
     width: 100%;
     height: 80px;
-    /* TEST */
-    background-color: rgba(174, 0, 255, 0.192);
+    background-color: var(--background-grey);
+    border-left: 1px solid #d7d7d7;
+}
+
+header.right-side .active-chat-info {
+    display: flex;
+    align-items: center;
+}
+
+header.right-side .active-chat-info img{
+    width: 3.5rem;
+    border-radius: 50%;
+    margin: .7rem;
+}
+
+header.right-side .active-chat-info .user-data{
+    color: var(--grey-text);
+    font-size: var(--grey-text-size);
+}
+
+header.right-side .active-chat-icons i{
+    padding: .5rem;
+
 }
 
 /* right side receive and send message section */
 .message-ReS-container{
     width: 100%;
     height: calc(100% - 160px);
-    background-color: bisque;
+    background-image: url(../img/mine.jpg);
+    overflow: auto;
 }
 
 /* right side footer */
 footer.right-side{
     width: 100%;
     height: 80px;
+    display: flex;
     /* TEST */
-    background-color: rgba(165, 42, 42, 0.158);
+    background-color: var(--background-grey);
 }
+
+footer.right-side i{
+    padding: 0 1.5rem;
+    line-height: 80px;
+    font-size: 1.3rem;
+}
+
+footer.right-side .searchContainer{
+    margin: 1rem 0;
+}
+
+footer.right-side .searchBox{
+    align-items: center;
+}
+
 
