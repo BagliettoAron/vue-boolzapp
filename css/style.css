@@ -22,6 +22,8 @@ html{
     --background-grey: #eaeaea;
     --icon-color: #b1b1b1;
     --background-notification-section: #8edafc;
+    --background-message-receive: #d5f9ba;
+    --background-message-sent: white;
 }
 
 /* COMMON */
@@ -135,20 +137,20 @@ header.left-side img{
     border: 1px solid #ccc;
     border-radius: 5px;
     overflow: hidden;
-  }
+}
   
-  .searchIcon {
+.searchIcon {
     padding: 0.2rem;
     padding-left: 1rem;
     background-color: white;
-  }
+}
   
-  .searchBox {
+.searchBox {
     border: 0;
     padding: 0.2rem;
     padding-left: 1rem;
     flex-grow: 1;
-  }
+}
 
 /* RIGHT SIDE OF INTERFACE */
 
@@ -199,7 +201,50 @@ header.right-side .active-chat-icons i{
     height: calc(100% - 160px);
     background-image: url(../img/mine.jpg);
     overflow: auto;
+    padding-top: 2rem;
 }
+
+.message-ReS-container .message-receive{
+    min-width: 5rem;
+    margin-left: 45%;
+    min-height: 3rem;
+    background-color: var(--background-message-receive);
+    float: right;
+    margin-right: 5%;
+    
+    border-radius: .5rem;
+    position: relative;
+    margin-bottom: .5rem;
+}
+
+.message-ReS-container .message-sent{
+    min-width: 5rem;
+    margin-right: 45%;
+    min-height: 3rem;
+    background-color: var(--background-message-sent);
+    float: right;
+    margin-left: 5%;
+    
+    border-radius: .5rem;
+    position: relative;
+    margin-bottom: .5rem;
+}
+
+.text-message{
+    margin: .7rem;
+}
+
+.text-message-metadata{
+    color: var(--grey-text);
+    font-size: var(--grey-text-size);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: .3rem;
+}
+
+
+
 
 /* right side footer */
 footer.right-side{
