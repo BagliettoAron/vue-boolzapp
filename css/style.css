@@ -24,6 +24,7 @@ html{
     --background-message-receive: #d5f9ba;
     --background-message-sent: white;
     --background-searchbar-icons: #717676;
+    --contact-active-bg: #e9ebeb;
 }
 
 /* COMMON */
@@ -151,14 +152,9 @@ header.left-side img{
 }
 
 /* contact list */
-.left-user-list{
-    display: flex;
-    align-items: center;
-}
-
-
 .contact-card{
     display: flex;
+    align-items: center;
     height: 4rem;
     width: 100%;
     border-bottom: 1px solid grey;
@@ -170,28 +166,28 @@ header.left-side img{
     margin-left: .7rem;
 }
 
-.contact-info{
+.contact-text{
+    flex-grow: 1;
     margin-left: 1rem;
-    position: relative;
 }
 
-.contact-info .last-message-sent{
+.contact-info{
+    display: flex;
+    justify-content: space-between;
+}
+
+.last-message-sent{
     color: var(--grey-text);
     font-size: var(--grey-text-size);
 }
 
-/* .contact-card__metadata {
-    flex-grow: 1;
-} */
-
 .contact-metadata{
    color: var(--grey-text);
    font-size: var(--grey-text-size);
-   flex-grow: 1;
 }
 
 .contact--active {
-    background-color: var(--background-searchbar-icons);
+    background-color: var(--contact-active-bg);
 }
 
 /* RIGHT SIDE OF INTERFACE */

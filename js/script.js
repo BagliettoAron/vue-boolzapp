@@ -6,6 +6,8 @@ const app = new Vue (
         el: '#root',
         data: {
 
+            contactCardActive: 0,
+
             contacts: [
                 {
                     name: 'Michele',
@@ -169,5 +171,13 @@ const app = new Vue (
                     ],
                 }
             ]
-        }    
-});
+        },    
+
+        methods: {
+            selectedUserCard: function (index) {
+                this.contactCardActive = index
+            },
+
+        },
+    }       
+);

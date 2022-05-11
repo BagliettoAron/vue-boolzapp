@@ -74,17 +74,20 @@
 
                     <!-- contact list  -->
                     
-                    <div class="left-user-list " v-for="contact in contacts">
-                        <div class="contact-card contact--active " >
-                            <img :src="`img/avatar` + contact.avatar + `.jpg`" alt="">
-                            <div class="contact-info">
-                                <span>{{ contact.name }}</span>
-                                <br>
-                                <span class="last-message-sent">Ultimo messaggio inviato</span>
+                    <div :class="{'contact--active' : contactCardActive === index }" v-for="(contact, index) in contacts">
+                        <div class="contact-card" @click="selectedUserCard(index)">
+                            <div class="contact-card__avatar">
+                                <img :src="`img/avatar` + contact.avatar + `.jpg`" :alt="contact.name">
                             </div>
-                            <div class="contact-card__metadata">
-                                <span class="contact-metadata" >12.00</span>
+
+                            <div class="contact-text">
+                                <div class="contact-info">
+                                    <h5>{{ contact.name }}</h5>
+                                    <p class="contact-metadata" >12.00</p>
+                                </div>
+                                <small class="last-message-sent">Ultimo messaggio inviato</small>
                             </div>
+
                         </div>
                     </div>
 
@@ -100,9 +103,9 @@
 
                         <!-- right header user info -->
                         <div class="active-chat-info">
-                            <img src="img/avatar_io.jpg" alt="account img user">
+                            <img :src="`img/avatar` + contacts[contactCardActive].avatar + `.jpg`" alt="account img user">
                             <div class="user-image-data">
-                                <p class="user-name">Michele</p> 
+                                <p class="user-name">{{contacts[contactCardActive].name}}</p> 
                                 <p class="user-data">Ultimo accesso oggi alle 12.00</p>
                             </div>    
                         </div>
