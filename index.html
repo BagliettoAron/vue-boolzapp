@@ -68,19 +68,25 @@
                     <div class="left-search-bar">
                         <div class="searchContainer">
                             <i class="fa fa-search searchIcon"></i>
-                            <input class="searchBox" type="search" name="search" placeholder="Cerca o inizia una nuova chat">
+                            <input 
+                            class="searchBox" 
+                            type="search" 
+                            name="search" 
+                            placeholder="Cerca o inizia una nuova chat"
+                            v-model="searchUser"
+                            @keyup='searchUserFilterRun'>
                         </div>
                     </div>
 
                     <!-- contact list  -->
                     
-                    <div :class="{'contact--active' : contactCardActive === index }" v-for="(contact, index) in contacts">
+                    <div :class="{'contact--active' : contactCardActive === index }" v-for="(contact, index) in contacts" >
                         <div class="contact-card" @click="selectedUserCard(index)">
                             <div class="contact-card__avatar">
                                 <img :src="`img/avatar` + contact.avatar + `.jpg`" :alt="contact.name">
                             </div>
 
-                            <div class="contact-text">
+                            <div class="contact-text" >
                                 <div class="contact-info">
                                     <h5>{{ contact.name }}</h5>
                                     <p class="contact-metadata" >12.00</p>
@@ -90,11 +96,6 @@
 
                         </div>
                     </div>
-
-                    
-                    
-                    
-                    
                 </div>
 
                 <!-- RIGHT SIDE -->
@@ -122,7 +123,7 @@
 
                     <div class="message-ReS-container">
 
-                        <div v-for="msg in contacts[contactCardActive].messages">
+                        <div class="message-container" v-for="msg in contacts[contactCardActive].messages">
                             <!-- message text -->
                             <div :class="msg.status == 'sent' ? 'message-sent' : 'message-receive'">
                             <p class="text-message">{{ msg.message }}</p>

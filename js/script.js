@@ -8,6 +8,7 @@ const app = new Vue (
 
             contactCardActive: 0,
             newMessageInput: '',
+            searchUser: '', 
 
             contacts: [
                 {
@@ -180,15 +181,43 @@ const app = new Vue (
             },
 
             
-            displayNewMessage: function (index) {
+            displayNewMessage: function() {
                 
                 const newMessage = {
                     message: this.newMessageInput,
-                    status: 'sent'
+                    status: 'sent',
+                    date: '10/01/2020 15:30:55',
                 }
                 
-                this.contacts[0].messages.push(newMessage);
+                this.contacts[this.contactCardActive].messages.push(newMessage);
+                this.newMessageInput = '';
+
+                setTimeout(() => {
+                    const reply = {
+                        message: 'ok',
+                        status: 'received',
+                        date: '10/01/2020 15:30:55',
+                    };
+                    this.contacts[this.contactCardActive].messages.push(reply);
+                }, 1000);
+            },
+
+            searchUserFilterRun: function() {
+                const formattedData = item.name.toLowerCase();
+                const formatedSearchInput = this.searchUser.toLowerCase();
+
+                this.contacts[this.contactCardActive].name.forEach( (item) => { 
+                    if (formattedData.includes(formatedSearchInput)) {
+                        item.visible = true;
+                    } else {
+                        item.visible = false
+                    }
+
+
+                });
+
                 
+
             }
 
 
