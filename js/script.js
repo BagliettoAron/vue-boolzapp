@@ -7,6 +7,7 @@ const app = new Vue (
         data: {
 
             contactCardActive: 0,
+            newMessageInput: '',
 
             contacts: [
                 {
@@ -177,6 +178,19 @@ const app = new Vue (
             selectedUserCard: function (index) {
                 this.contactCardActive = index
             },
+
+            
+            displayNewMessage: function (index) {
+                
+                const newMessage = {
+                    message: this.newMessageInput,
+                    status: 'sent'
+                }
+                
+                this.contacts[0].messages.push(newMessage);
+                
+            }
+
 
         },
     }       

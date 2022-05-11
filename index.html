@@ -118,33 +118,36 @@
                         </div>
                     </header>
 
-                    <!-- chat section -->
+                    <!-- CHAT SECTION -->
+
                     <div class="message-ReS-container">
 
-                        <!-- messaggio inviato -->
-                        <div class="message-sent">
-                           <p class="text-message"> ciao sono un messaggio inviato. </p>
-                           <div class="text-message-metadata">test</div>
+                        <div v-for="msg in contacts[contactCardActive].messages">
+                            <!-- message text -->
+                            <div :class="msg.status == 'sent' ? 'message-sent' : 'message-receive'">
+                            <p class="text-message">{{ msg.message }}</p>
+                            <div class="text-message-metadata">{{ msg.date }}</div>
+                            </div>
                         </div>
 
                         <!-- messaggio inviato -->
-                        <div class="message-sent">
+                        <!-- <div class="message-sent">
                             <p class="text-message"> ciao sono un messaggio inviato. fottutamente lungo. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus mollitia magni vel quibusdam veniam unde commodi dicta, ad ex! Autem laboriosam qui quia iusto inventore eum, nam laudantium vitae dolore. </p>
                             <div class="text-message-metadata">test</div>
-                         </div>
+                         </div> -->
 
                         <!-- messaggio ricevuto -->
-                        <div class="message-receive">
+                        <!-- <div class="message-receive">
                             <p class="text-message">ok.</p>
                             
                             <div class="text-message-metadata">test</div>
-                        </div>
+                        </div> -->
 
                         <!-- messaggio ricevuto -->
-                        <div class="message-receive">
+                        <!-- <div class="message-receive">
                             <p class="text-message"> ciao sono un messaggio ricevuto. fottutamente lungo. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus mollitia magni vel quibusdam veniam unde commodi dicta, ad ex! Autem laboriosam qui quia iusto inventore eum, nam laudantium vitae dolore. </p>
                             <div class="text-message-metadata">test</div>
-                        </div>
+                        </div> -->
                     </div>
 
                     <!-- footer right section -->
@@ -153,7 +156,13 @@
                         <i class="far fa-smile"></i>
                         <!-- searchbar -->
                         <div class="searchContainer">
-                            <input class="searchBox" type="search" name="search" placeholder="Scrivi un messaggio">
+                            <input 
+                            class="searchBox" 
+                            type="search" 
+                            name="search" 
+                            placeholder="Scrivi un messaggio"
+                            v-model="newMessageInput"
+                            @keyup.enter="displayNewMessage">
                         </div>
                         <!-- icon -->
                         <i class="fas fa-microphone"></i>
