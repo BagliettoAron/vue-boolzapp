@@ -74,17 +74,19 @@
 
                     <!-- contact list  -->
                     
-                    <ul class="left-user-list" v-for="contact in contacts">
-                        <li class="contact-card" >
+                    <div class="left-user-list " v-for="contact in contacts">
+                        <div class="contact-card contact--active " >
                             <img :src="`img/avatar` + contact.avatar + `.jpg`" alt="">
                             <div class="contact-info">
                                 <span>{{ contact.name }}</span>
                                 <br>
                                 <span class="last-message-sent">Ultimo messaggio inviato</span>
                             </div>
-                            <span class="contact-metadata" >12.00</span>
-                        </li>
-                    </ul>
+                            <div class="contact-card__metadata">
+                                <span class="contact-metadata" >12.00</span>
+                            </div>
+                        </div>
+                    </div>
 
                     
                     
