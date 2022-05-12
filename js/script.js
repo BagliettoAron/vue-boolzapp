@@ -204,7 +204,7 @@ const app = new Vue (
 
             searchUserFilterRun: function() {
                 
-                this.contacts[this.contactCardActive].name.forEach( (item) => { 
+                this.contacts.forEach((item) => { 
 
                     const formattedDataToSearch = item.name.toLowerCase();
                     const formatedSearchInput = this.searchUser.toLowerCase();
@@ -214,12 +214,7 @@ const app = new Vue (
                     } else {
                         item.visible = false
                     }
-
-
                 });
-
-                
-
             }
 
 

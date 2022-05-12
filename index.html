@@ -78,9 +78,7 @@
                     </div>
 
                     <!-- contact list  -->
-                    <div :class="{'contact--active' : contactCardActive === index }" v-for="(contact, index) in contacts">
-                        <!-- -----------  TO FIX -->
-                        <div class="search-show" v-if="contacts.visible" >
+                    <div :class="{'contact--active' : contactCardActive === index }" v-for="(contact, index) in contacts" v-if="contact.visible">
                     
                             <div class="contact-card" @click="selectedUserCard(index)" >
                                 <div class="contact-card__avatar">
@@ -96,7 +94,7 @@
                                 </div>
                                 
                             </div>
-                        </div>
+                        
 
                     </div>
                 </div>
