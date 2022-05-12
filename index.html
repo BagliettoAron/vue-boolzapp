@@ -19,7 +19,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 
-
     <!-- Vue -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 
@@ -79,22 +78,26 @@
                     </div>
 
                     <!-- contact list  -->
+                    <div :class="{'contact--active' : contactCardActive === index }" v-for="(contact, index) in contacts">
+                        <!-- -----------  TO FIX -->
+                        <div class="search-show" v-if="contacts.visible" >
                     
-                    <div :class="{'contact--active' : contactCardActive === index }" v-for="(contact, index) in contacts" >
-                        <div class="contact-card" @click="selectedUserCard(index)">
-                            <div class="contact-card__avatar">
-                                <img :src="`img/avatar` + contact.avatar + `.jpg`" :alt="contact.name">
-                            </div>
-
-                            <div class="contact-text" >
-                                <div class="contact-info">
-                                    <h5>{{ contact.name }}</h5>
-                                    <p class="contact-metadata" >12.00</p>
+                            <div class="contact-card" @click="selectedUserCard(index)" >
+                                <div class="contact-card__avatar">
+                                    <img :src="`img/avatar` + contact.avatar + `.jpg`" :alt="contact.name">
                                 </div>
-                                <small class="last-message-sent">Ultimo messaggio inviato</small>
+                                
+                                <div class="contact-text" >
+                                    <div class="contact-info">
+                                        <h5>{{ contact.name }}</h5>
+                                        <p class="contact-metadata" >12.00</p>
+                                    </div>
+                                    <small class="last-message-sent">Ultimo messaggio inviato</small>
+                                </div>
+                                
                             </div>
-
                         </div>
+
                     </div>
                 </div>
 
@@ -153,25 +156,8 @@
                         </div>
                         <!-- icon -->
                         <i class="fas fa-microphone"></i>
-                    </footer>
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                    
-                    
-                    
+                    </footer>    
                 </div>
-                
-                
-                
-                
-                
-                
                 
             </div>
         </main>

@@ -14,7 +14,7 @@ const app = new Vue (
                 {
                     name: 'Michele',
                     avatar: '_1',
-                    visible: true,
+                    visible: false,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -153,7 +153,7 @@ const app = new Vue (
                 {
                     name: 'Davide',
                     avatar: '_8',
-                    visible: true,
+                    visible: false,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -203,11 +203,13 @@ const app = new Vue (
             },
 
             searchUserFilterRun: function() {
-                const formattedData = item.name.toLowerCase();
-                const formatedSearchInput = this.searchUser.toLowerCase();
-
+                
                 this.contacts[this.contactCardActive].name.forEach( (item) => { 
-                    if (formattedData.includes(formatedSearchInput)) {
+
+                    const formattedDataToSearch = item.name.toLowerCase();
+                    const formatedSearchInput = this.searchUser.toLowerCase();
+
+                    if (formattedDataToSearch.includes(formatedSearchInput)) {
                         item.visible = true;
                     } else {
                         item.visible = false

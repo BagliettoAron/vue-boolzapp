@@ -188,6 +188,7 @@ header.left-side img{
 .contact-metadata{
    color: var(--grey-text);
    font-size: var(--grey-text-size);
+   margin-right: .5rem;
 }
 
 .contact--active {
